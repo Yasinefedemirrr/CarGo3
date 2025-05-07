@@ -1,0 +1,68 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.12.35527.113
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{4D90B29A-36D1-4BF7-85AD-B8F075AF8C37}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cargo.Domain", "Core\Cargo.Domain\Cargo.Domain.csproj", "{11540B91-587E-4B9D-979D-3E8D71FBE429}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "infrastructure", "infrastructure", "{2667E8FA-2611-48CA-81F5-DB855F724126}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarGo.Persistence", "infrastructure\CarGo.Persistence\CarGo.Persistence.csproj", "{58E992E6-CE0C-4607-9D8C-03E07AED37E9}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{AA3C0619-CFE6-4EB5-A8A3-BC6F25382B14}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarGo.WebApi", "Presentaton\CarGo.WebApi\CarGo.WebApi.csproj", "{F56209C7-8FFB-4AF9-91DA-819F141CF373}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarGo.Application", "core\CarGo.Application\CarGo.Application.csproj", "{486A0D30-F978-4B0D-8C7D-44220E856446}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Frontends", "Frontends", "{862A5F81-6F4F-4CCF-9301-D682B38F8C91}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarGo.WebUI", "Frontends\CarGo.WebUI\CarGo.WebUI.csproj", "{580B313D-A112-4D6F-8722-C3930DC84D1D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarGo.Dto", "Frontends\CarGo.Dto\CarGo.Dto.csproj", "{BEE71F9F-4750-4D52-8146-7C5BA0506F52}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{11540B91-587E-4B9D-979D-3E8D71FBE429}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{11540B91-587E-4B9D-979D-3E8D71FBE429}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{11540B91-587E-4B9D-979D-3E8D71FBE429}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{11540B91-587E-4B9D-979D-3E8D71FBE429}.Release|Any CPU.Build.0 = Release|Any CPU
+		{58E992E6-CE0C-4607-9D8C-03E07AED37E9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{58E992E6-CE0C-4607-9D8C-03E07AED37E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{58E992E6-CE0C-4607-9D8C-03E07AED37E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{58E992E6-CE0C-4607-9D8C-03E07AED37E9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F56209C7-8FFB-4AF9-91DA-819F141CF373}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F56209C7-8FFB-4AF9-91DA-819F141CF373}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F56209C7-8FFB-4AF9-91DA-819F141CF373}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F56209C7-8FFB-4AF9-91DA-819F141CF373}.Release|Any CPU.Build.0 = Release|Any CPU
+		{486A0D30-F978-4B0D-8C7D-44220E856446}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{486A0D30-F978-4B0D-8C7D-44220E856446}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{486A0D30-F978-4B0D-8C7D-44220E856446}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{486A0D30-F978-4B0D-8C7D-44220E856446}.Release|Any CPU.Build.0 = Release|Any CPU
+		{580B313D-A112-4D6F-8722-C3930DC84D1D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{580B313D-A112-4D6F-8722-C3930DC84D1D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{580B313D-A112-4D6F-8722-C3930DC84D1D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{580B313D-A112-4D6F-8722-C3930DC84D1D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BEE71F9F-4750-4D52-8146-7C5BA0506F52}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BEE71F9F-4750-4D52-8146-7C5BA0506F52}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BEE71F9F-4750-4D52-8146-7C5BA0506F52}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BEE71F9F-4750-4D52-8146-7C5BA0506F52}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{11540B91-587E-4B9D-979D-3E8D71FBE429} = {4D90B29A-36D1-4BF7-85AD-B8F075AF8C37}
+		{58E992E6-CE0C-4607-9D8C-03E07AED37E9} = {2667E8FA-2611-48CA-81F5-DB855F724126}
+		{F56209C7-8FFB-4AF9-91DA-819F141CF373} = {AA3C0619-CFE6-4EB5-A8A3-BC6F25382B14}
+		{486A0D30-F978-4B0D-8C7D-44220E856446} = {4D90B29A-36D1-4BF7-85AD-B8F075AF8C37}
+		{580B313D-A112-4D6F-8722-C3930DC84D1D} = {862A5F81-6F4F-4CCF-9301-D682B38F8C91}
+		{BEE71F9F-4750-4D52-8146-7C5BA0506F52} = {862A5F81-6F4F-4CCF-9301-D682B38F8C91}
+	EndGlobalSection
+EndGlobal

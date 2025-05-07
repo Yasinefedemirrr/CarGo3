@@ -1,0 +1,6 @@
+@CarGo.WebApi_HostAddress = http://localhost:5137
+
+GET {{CarGo.WebApi_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
