@@ -12,11 +12,11 @@ namespace Cargo.Domain.Entities
 
         public int CarId { get; set; }
 
-        public Car Carr { get; set; }
+        public Car Car { get; set; }
 
         public int PricingId{ get; set; }
 
-        public int Pricing { get; set; }
+        public Pricing Pricing { get; set; }
 
         public decimal Amount { get; set; }
 

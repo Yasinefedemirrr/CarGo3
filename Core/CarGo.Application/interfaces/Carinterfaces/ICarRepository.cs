@@ -13,5 +13,6 @@ namespace CarGo.Application.interfaces.Carinterfaces
     {
         List<Car> GetCarsListWithBrand();
         List<Car> GetLast5CarsListWithBrand();
+
     }
 }

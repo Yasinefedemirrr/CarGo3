@@ -9,7 +9,6 @@ namespace CarGo.Application.Features.Mediator.Commands.PricingCommand
 {
     public class CreatePricingCommand: IRequest
     {
-        public int PricingId { get; set; }
 
         public string Name { get; set; }
         

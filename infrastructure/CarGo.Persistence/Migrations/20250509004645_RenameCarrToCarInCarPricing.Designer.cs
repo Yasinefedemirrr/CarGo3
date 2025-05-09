@@ -3,6 +3,7 @@ using System;
 using CarGo.Persistence.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
@@ -11,9 +12,11 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace CarGo.Persistence.Migrations
 {
     [DbContext(typeof(CarGoContext))]
-    partial class CarGoContextModelSnapshot : ModelSnapshot
+    [Migration("20250509004645_RenameCarrToCarInCarPricing")]
+    partial class RenameCarrToCarInCarPricing
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -263,6 +266,9 @@ namespace CarGo.Persistence.Migrations
                         .HasColumnType("numeric");
 
                     b.Property<int>("CarId")
+                        .HasColumnType("integer");
+
+                    b.Property<int>("Pricing")
                         .HasColumnType("integer");
 
                     b.Property<int>("PricingId")
@@ -547,15 +553,13 @@ namespace CarGo.Persistence.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Cargo.Domain.Entities.Pricing", "Pricing")
+                    b.HasOne("Cargo.Domain.Entities.Pricing", null)
                         .WithMany("CarPricings")
                         .HasForeignKey("PricingId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("Car");
-
-                    b.Navigation("Pricing");
                 });
 
             modelBuilder.Entity("Cargo.Domain.Entities.Author", b =>

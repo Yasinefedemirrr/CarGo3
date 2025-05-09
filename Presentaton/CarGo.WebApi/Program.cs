@@ -19,6 +19,8 @@ using CarGo.Application.Features.Mediator.Handlers.BlogHandlers;
 using MediatR;
 using CarGo.Application.interfaces.BlogInterfaces;
 using CarGo.Persistence.Repositories.BlogRepositories;
+using CarGo.Application.interfaces.CarPricinginterfaces;
+using CarGo.Persistence.Repositories.CarPricingRepositories;
 
 
 
@@ -49,6 +51,10 @@ builder.Services.AddScoped<CarGoContext>();
 builder.Services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
 builder.Services.AddScoped<ICarRepository, CarRepository>();
 builder.Services.AddScoped(typeof(IBlogRepository), typeof(BlogRepository));
+builder.Services.AddScoped(typeof(ICarPricingRepository), typeof(CarPricingRepository));
+
+
+
 builder.Services.AddScoped<GetAboutQueryHandler>();
 builder.Services.AddScoped<GetAboutByIdQueryHandler>();
 builder.Services.AddScoped<CreateAboutCommandHandler>();
