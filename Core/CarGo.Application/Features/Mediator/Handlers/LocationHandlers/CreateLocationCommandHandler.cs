@@ -10,11 +10,11 @@ using CarGo.Application.Features.Mediator.Commands.LocationCommand;
 
 namespace CarGo.Application.Locations.Mediator.Handlers.LocationHandlers
 {
-    public class CreateBlogCommandHandler : IRequestHandler<CreateLocationCommand>
+    public class CreateTagCloudCommandHandler : IRequestHandler<CreateLocationCommand>
     {
         private readonly IRepository<Location> _repository;
 
-        public CreateBlogCommandHandler(IRepository<Location> repository)
+        public CreateTagCloudCommandHandler(IRepository<Location> repository)
         {
             _repository = repository;
         }

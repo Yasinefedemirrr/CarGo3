@@ -30,7 +30,8 @@ namespace CarGo.Application.Blogs.Mediator.Handlers.BlogHandlers
                 Title = values.Title,
                 CategoryID = values.CategoryID,
                 CoverImageUrl = values.CoverImageUrl,
-                CreatedDate = values.CreatedDate
+                CreatedDate = values.CreatedDate,
+                Description = values.Description,
             };
         }
     }

@@ -11,11 +11,11 @@ using CarGo.Application.Locations.Mediator.Queries.LocationQueries;
 
 namespace CarGo.Application.Locations.Mediator.Handlers.LocationHandlers
 {
-    public class GetBlogByIdQueryHandler : IRequestHandler<GetLocationByIdQuery, GetLocationByIdQueryResult>
+    public class GetTagCloudByIdQueryHandler : IRequestHandler<GetLocationByIdQuery, GetLocationByIdQueryResult>
     {
         private readonly IRepository<Location> _repository;
 
-        public GetBlogByIdQueryHandler(IRepository<Location> repository)
+        public GetTagCloudByIdQueryHandler(IRepository<Location> repository)
         {
             _repository = repository;
         }
@@ -25,7 +25,7 @@ namespace CarGo.Application.Locations.Mediator.Handlers.LocationHandlers
             var values = await _repository.GetByIdAsync(request.Id);
             return new GetLocationByIdQueryResult
             {
-                LocationID = request.Id,
+                LocationID = values.LocationID,
                 Name = values.Name,
             };
         }
