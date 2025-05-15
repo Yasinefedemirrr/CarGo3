@@ -47,7 +47,7 @@ namespace CarGo.WebApi.Controllers
             return Ok("Marka Bilgisi Eklendi");
         }
 
-        [HttpDelete]
+        [HttpDelete("{id}")]
         public async Task<IActionResult> RemoveBrand(int id)
         {
             await _removeBrandCommandHandler.Handle(new RemoveBrandCommand(id));
