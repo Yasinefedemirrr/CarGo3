@@ -16,7 +16,7 @@ namespace Cargo.Domain.Entities
 
         public string Model { get; set; }
 
-        public string CoverİmageUrl { get; set; }
+        public string CoverImageUrl { get; set; }
 
         public int Km { get; set; }
 

@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CarGo.Application.Features.CQRS.Commands.CarCommands
+namespace CarGo.Dto.CarDtos
 {
-    public class CreateCarCommand
+    public class CreateCarDto
     {
         public int BrandID { get; set; }
         public string Model { get; set; }

@@ -28,7 +28,7 @@ namespace CarGo.Application.Features.CQRS.Handlers.CarHandlers
                 BrandID = values.BrandID,
                 BigİmageUrl = values.BigİmageUrl,
                 CarID = values.CarID,
-                CoverİmageUrl = values.CoverİmageUrl,
+                CoverImageUrl = values.CoverImageUrl,
                 Fuel = values.Fuel,
                 Km = values.Km,
                 Luggage = values.Luggage,

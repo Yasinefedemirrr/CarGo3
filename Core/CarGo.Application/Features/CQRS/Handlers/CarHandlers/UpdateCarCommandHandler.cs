@@ -27,7 +27,7 @@ namespace CarGo.Application.Features.CQRS.Handlers.CarHandlers
             values.BigİmageUrl = command.BigİmageUrl;
             values.BrandID = command.BrandID;
             values.Km  = command.Km;
-            values.CoverİmageUrl = command.CoverİmageUrl;
+            values.CoverImageUrl = command.CoverImageUrl;
             values.Luggage = command.Luggage;
             values.Model = command.Model;
             values.Seat = command.Seat;

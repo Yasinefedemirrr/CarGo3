@@ -26,7 +26,14 @@ namespace CarGo.Persistence.Repositories.CommentRepositories
 
         public List<Comment> GetAll()
         {
-           return _context.Comments.ToList();
+           return _context.Comments.Select(x=> new Comment
+           {
+                CommentID = x.CommentID,
+               BlogID = x.BlogID,
+               CreatedDate = x.CreatedDate,
+               Description = x.Description,
+               Name = x.Name,
+              }).ToList();
         }
 
         public Comment GetById(int id)
