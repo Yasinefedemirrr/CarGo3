@@ -30,6 +30,7 @@ namespace CarGo.Application.Features.Mediator.Handlers.BlogHandlers
                 CreatedDate = x.CreatedDate,
                 Title = x.Title,
                 AuthorName = x.Author.Name
+                
             }).ToList();
         }
     }

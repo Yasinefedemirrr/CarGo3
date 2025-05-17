@@ -17,7 +17,7 @@ namespace CarGo.WebUI.Controllers
             ViewBag.v1 = "Araçlarımız";
             ViewBag.v2 = "Aracınızı Seçiniz";
             var client = _httpClientFactory.CreateClient();
-            var responseMessage = await client.GetAsync("http://localhost:7266/api/CarPricings");
+            var responseMessage = await client.GetAsync("http://localhost:7266/api/Cars");
             if (responseMessage.IsSuccessStatusCode)
             {
                 var jsonData = await responseMessage.Content.ReadAsStringAsync();

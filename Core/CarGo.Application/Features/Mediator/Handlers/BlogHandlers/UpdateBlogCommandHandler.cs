@@ -27,6 +27,7 @@ namespace CarGo.Application.Blogs.Mediator.Handlers.BlogHandlers
             values.CategoryID = request.CategoryID;
             values.Title = request.Title;
             values.CoverImageUrl = request.CoverImageUrl;
+            values.Description = request.Description;
             await _repository.UpdateAsync(values);
         }
     }
