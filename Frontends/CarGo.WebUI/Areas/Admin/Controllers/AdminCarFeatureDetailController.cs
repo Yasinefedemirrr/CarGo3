@@ -2,6 +2,7 @@
 using CarGo.Dto.FeatureDtos;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
+using System.Text;
 
 namespace CarGo.WebUI.Areas.Admin.Controllers
 {
@@ -57,7 +58,7 @@ namespace CarGo.WebUI.Areas.Admin.Controllers
         public async Task<IActionResult> CreateFeatureByCarId()
         {
             var client = _httpClientFactory.CreateClient();
-            var responseMessage = await client.GetAsync("https://localhost:7060/api/Features");
+            var responseMessage = await client.GetAsync("http://localhost:7266/api/Features");
             if (responseMessage.IsSuccessStatusCode)
             {
                 var jsonData = await responseMessage.Content.ReadAsStringAsync();
