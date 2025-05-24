@@ -23,13 +23,13 @@ namespace CarGo.Application.Features.Mediator.Handlers.ReviewHandlers
             var values = _repository.GetReviewsByCarId(request.Id);
             return values.Select(x => new GetReviewByCarIdQueryResult
             {
-                CarID = x.CarID,
-                Comment = x.Comment,
-                CustomerImage = x.CustomerImage,
-                CustomerName = x.CustomerName,
-                RaytingValue = x.RaytingValue,
-                ReviewDate = x.ReviewDate,
-                ReviewID = x.ReviewID
+                CarID =  x.CarID,
+                Comment =  x.Comment,
+                CustomerImage =  x.CustomerImage,
+                CustomerName =  x.CustomerName,
+                RaytingValue =  x.RaytingValue,
+                ReviewDate =  x.ReviewDate,
+                ReviewID =  x.ReviewID
             }).ToList();
         }
     }

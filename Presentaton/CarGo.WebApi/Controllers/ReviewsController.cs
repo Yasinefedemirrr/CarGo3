@@ -27,14 +27,14 @@ namespace CarGo.WebApi.Controllers
         public async Task<IActionResult> CreateReview(CreateReviewCommand command)
         {
             await _mediator.Send(command);
-            return Ok("Ekleme işlemi gerçekleşti");
+            return Ok("Ekleme işlemi  Başarıyla gerçekleşti");
         }
 
         [HttpPut]
         public async Task<IActionResult> UpdateReview(UpdateReviewCommand command)
         {
             await _mediator.Send(command);
-            return Ok("Güncelleme işlemi gerçekleşti");
+            return Ok("Güncelleme işlemi Başarıyla gerçekleşti");
         }
     }
 }

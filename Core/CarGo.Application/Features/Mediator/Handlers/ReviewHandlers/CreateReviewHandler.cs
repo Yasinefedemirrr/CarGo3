@@ -25,12 +25,12 @@ namespace CarGo.Application.Features.Mediator.Handlers.ReviewHandlers
 
             await _repository.CreateAsync(new Review
             {
-                CustomerImage = request.CustomerImage,
-                CarID = request.CarID,
-                Comment = request.Comment,
-                CustomerName = request.CustomerName,
-                RaytingValue = request.RaytingValue,
-                ReviewDate = utcReviewDate
+                CustomerImage =  request.CustomerImage,
+                CarID =  request.CarID,
+                Comment =  request.Comment,
+                CustomerName =  request.CustomerName,
+                RaytingValue =  request.RaytingValue,
+                ReviewDate =  utcReviewDate
             });
         }
     }

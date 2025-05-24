@@ -8,13 +8,13 @@ using MediatR;
 
 namespace CarGo.Application.Features.Mediator.Queries.ReviewQueries
 {
-    public class GetReviewByCarIdQuery : IRequest<List<GetReviewByCarIdQueryResult>>
-    {
-        public int Id { get; set; }
+     public class GetReviewByCarIdQuery : IRequest<List<GetReviewByCarIdQueryResult>>
+     {
+         public int Id { get; set; }
 
-        public GetReviewByCarIdQuery(int id)
-        {
-            Id = id;
-        }
-    }
+         public GetReviewByCarIdQuery(int id)
+         {
+             Id = id;
+         }
+     }
 }
