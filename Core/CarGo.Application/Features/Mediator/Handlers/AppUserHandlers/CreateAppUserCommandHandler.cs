@@ -7,6 +7,7 @@ using CarGo.Application.Features.Mediator.Commands.AppUserCommands;
 using CarGo.Application.interfaces;
 using Cargo.Domain.Entities;
 using MediatR;
+using CarGo.Application.Enums;
 
 namespace CarGo.Application.Features.Mediator.Handlers.AppUserHandlers
 {
@@ -23,7 +24,7 @@ namespace CarGo.Application.Features.Mediator.Handlers.AppUserHandlers
             {
                 Password = request.Password,
                 Username = request.Username,
-                //AppRoleId = (int)RolesType.Member,
+                AppRoleId = (int)RolesType.Member,
                 Email = request.Email,
                 Name = request.Name,
                 Surname = request.Surname
