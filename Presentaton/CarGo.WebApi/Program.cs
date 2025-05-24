@@ -134,6 +134,20 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddCookie
+    (JwtBearerDefaults.AuthenticationScheme, opt =>
+    {
+        opt.LoginPath = "/Login/Index/";
+        opt.LogoutPath = "/Login/LogOut/";
+        opt.AccessDeniedPath = "/Pages/AccesDenied/";
+        opt.Cookie.HttpOnly = true;
+        opt.Cookie.SecurePolicy = CookieSecurePolicy.SameAsRequest;
+        opt.Cookie.Name = "CarGoJwt";
+
+    });
+    
+
+
 var app = builder.Build();
 
 // CORS'u doðru sýrada eklediðimizden emin olalým

@@ -52,7 +52,6 @@ namespace CarGo.WebUI.Areas.Admin.Controllers
             }
             return RedirectToAction("Index", "AdminCar");
         }
-
         [Route("CreateFeatureByCarId")]
         [HttpGet]
         public async Task<IActionResult> CreateFeatureByCarId()
