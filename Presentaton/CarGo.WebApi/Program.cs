@@ -31,6 +31,9 @@ using CarGo.Application.interfaces.CarDescriptioninterfaces;
 using CarGo.Persistence.Repositories.CarDescriptionRepositories;
 using CarGo.Application.interfaces.Reviewinterfaces;
 using CarGo.Persistence.Repositories.ReviewRepositories;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
+using System.Text;
 
 
 
@@ -55,6 +58,21 @@ builder.Services.AddControllers();
 // PostgreSQL baðlantýsýný ekleyin (appsettings.json'dan alarak)
 builder.Services.AddDbContext<CarGoContext>(options =>
     options.UseNpgsql(builder.Configuration.GetConnectionString("PostgreSqlConnection")));
+
+builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(opt =>
+{
+    opt.RequireHttpsMetadata = false;
+    opt.TokenValidationParameters = new TokenValidationParameters
+    {
+        ValidAudience = "http://localhost",
+        ValidIssuer = "http://localhost",
+        ClockSkew = TimeSpan.Zero,
+        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("cargocargocargo1")),
+        ValidateLifetime = true,
+        ValidateIssuerSigningKey = true
+    };
+});
+
 
 // Diðer servisleri ekleyelim
 builder.Services.AddScoped<CarGoContext>();

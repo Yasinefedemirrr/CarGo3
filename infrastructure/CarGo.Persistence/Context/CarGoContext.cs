@@ -19,7 +19,8 @@ namespace CarGo.Persistence.Context
             optionsBuilder.UseNpgsql("Host=localhost;Port=5432;Database=CarGodb;Username=postgres;Password=1234");
 
         }
-
+        public DbSet<AppRole> AppRoles { get; set; }
+        public DbSet<AppUser> AppUsers { get; set; }
         public DbSet<About> Abouts{ get; set; }
         public DbSet<Banner> Banners{ get; set; }
         public DbSet<Brand> Brands{ get; set; }
