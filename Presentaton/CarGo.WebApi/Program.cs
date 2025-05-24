@@ -27,6 +27,10 @@ using CarGo.Application.interfaces.RentACarinterfaces;
 using CarGo.Persistence.Repositories.RentACarRepositories;
 using CarGo.Application.interfaces.CarFeatureinterfaces;
 using CarGo.Persistence.Repositories.CarFeatureRepositories;
+using CarGo.Application.interfaces.CarDescriptioninterfaces;
+using CarGo.Persistence.Repositories.CarDescriptionRepositories;
+using CarGo.Application.interfaces.Reviewinterfaces;
+using CarGo.Persistence.Repositories.ReviewRepositories;
 
 
 
@@ -60,7 +64,9 @@ builder.Services.AddScoped(typeof(IBlogRepository), typeof(BlogRepository));
 builder.Services.AddScoped(typeof(IRentACarRepository), typeof(RentACarRepository));
 builder.Services.AddScoped(typeof(ICarPricingRepository), typeof(CarPricingRepository));
 builder.Services.AddScoped(typeof(ICarFeatureRepository), typeof(CarFeatureRepository));
+builder.Services.AddScoped(typeof(ICarDescriptionRepository), typeof(CarDescriptionRepository));
 builder.Services.AddScoped(typeof(IGenericRepository<>), typeof(CommentRepository<>));
+builder.Services.AddScoped(typeof(IReviewRepository), typeof(ReviewRepository));
 
 
 
