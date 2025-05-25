@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using System.IdentityModel.Tokens.Jwt;
 using CarGo.WebUI.Models;
+using Microsoft.AspNetCore.Authentication.Cookies;
 
 namespace CarGo.WebUI.Controllers
 {
@@ -46,7 +47,7 @@ namespace CarGo.WebUI.Controllers
 
                     if (tokenModel.Token != null)
                     {
-                        claims.Add(new Claim("cargotoken", tokenModel.Token));
+                        claims.Add(new Claim("carbooktoken", tokenModel.Token));
                         var claimsIdentity = new ClaimsIdentity(claims, JwtBearerDefaults.AuthenticationScheme);
                         var authProps = new AuthenticationProperties
                         {

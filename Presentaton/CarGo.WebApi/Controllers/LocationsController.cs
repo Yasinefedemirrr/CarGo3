@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace CarGo.WebApi.Controllers
 {
-    [Authorize(Roles = "Admin")]
+    
     [Route("api/[controller]")]
     [ApiController]
     public class LocationsController : ControllerBase

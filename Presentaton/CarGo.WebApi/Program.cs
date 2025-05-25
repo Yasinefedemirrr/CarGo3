@@ -1,4 +1,4 @@
-using Microsoft.EntityFrameworkCore;
+ï»¿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 
 using CarGo.Persistence.Context;
@@ -35,20 +35,21 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
 using CarGo.Application.Tools;
+using Microsoft.AspNetCore.Authentication.Cookies;
 
 
 
-// CORS için politika ekle
+// CORS iÃ§in politika ekle
 var builder = WebApplication.CreateBuilder(args);
 
-// CORS için politika ekle
+// CORS iÃ§in politika ekle
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowReactNative", policy =>
     {
         policy.WithOrigins("http://localhost:19006") // React Native debug server URL'si
-              .AllowAnyHeader()                     // Baþlýklarý serbest býrak
-              .AllowAnyMethod();                    // Yöntemleri serbest býrak
+              .AllowAnyHeader()                     // BaÅŸlÄ±klarÄ± serbest bÄ±rak
+              .AllowAnyMethod();                    // YÃ¶ntemleri serbest bÄ±rak
     });
 });
 
@@ -56,10 +57,11 @@ builder.Services.AddControllers();
 
 
 
-// PostgreSQL baðlantýsýný ekleyin (appsettings.json'dan alarak)
+// PostgreSQL baÄŸlantÄ±sÄ±nÄ± ekleyin (appsettings.json'dan alarak)
 builder.Services.AddDbContext<CarGoContext>(options =>
     options.UseNpgsql(builder.Configuration.GetConnectionString("PostgreSqlConnection")));
 
+// AUTHENTICATION (SADECE BU KISIM DEÄžÄ°ÅžTÄ°RÄ°LDÄ°)
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(opt =>
 {
     opt.RequireHttpsMetadata = false;
@@ -75,7 +77,8 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJw
 });
 
 
-// Diðer servisleri ekleyelim
+
+// DiÄŸer servisleri ekleyelim
 builder.Services.AddScoped<CarGoContext>();
 builder.Services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
 builder.Services.AddScoped<ICarRepository, CarRepository>();
@@ -129,29 +132,18 @@ builder.Services.AddScoped<RemoveContactCommandHandler>();
 
 builder.Services.AddApplicationService(builder.Configuration);
 
-// API controller'larýný ve Swagger'ý ekleyelim
+// API controller'larÄ±nÄ± ve Swagger'Ä± ekleyelim
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddCookie
-    (JwtBearerDefaults.AuthenticationScheme, opt =>
-    {
-        opt.LoginPath = "/Login/Index/";
-        opt.LogoutPath = "/Login/LogOut/";
-        opt.AccessDeniedPath = "/Pages/AccesDenied/";
-        opt.Cookie.HttpOnly = true;
-        opt.Cookie.SecurePolicy = CookieSecurePolicy.SameAsRequest;
-        opt.Cookie.Name = "CarGoJwt";
 
-    });
-    
 
 
 var app = builder.Build();
 
-// CORS'u doðru sýrada eklediðimizden emin olalým
-app.UseCors("AllowReactNative");  // CORS middleware'ini burada çaðýrýyoruz.
+// CORS'u ekle
+app.UseCors("AllowReactNative");
 
 if (app.Environment.IsDevelopment())
 {
@@ -159,16 +151,17 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
+app.UseRouting(); // ðŸ“Œ Routing middleware'i gerekli
 app.UseAuthentication();
 app.UseAuthorization();
 
-app.MapControllers();
-app.Run();
 app.UseEndpoints(endpoints =>
 {
     endpoints.MapControllerRoute(
-      name: "areas",
-      pattern: "{area:exists}/{controller=Home}/{action=Index}/{id?}"
+        name: "areas",
+        pattern: "{area:exists}/{controller=Home}/{action=Index}/{id?}"
     );
+    endpoints.MapControllers(); // Bu da endpoint iÃ§inde yer almalÄ±
 });
-app.Run();
+
+app.Run(); // 
