@@ -22,10 +22,10 @@ namespace CarGo.WebUI.Controllers
             var responseMessage = await client.GetAsync("http://localhost:7266/api/Cars/GetCarWithBrand");
             if (responseMessage.IsSuccessStatusCode)
             {
-                var jsonData=await responseMessage.Content.ReadAsStringAsync();
+                var jsonData = await responseMessage.Content.ReadAsStringAsync();
                 var values = JsonConvert.DeserializeObject<List<ResultCarWithBrandsDtos>>(jsonData);
                 return View(values);
-            } 
+            }
 
             return View();
         }
@@ -47,8 +47,8 @@ namespace CarGo.WebUI.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> CreateCar( CreateCarDto createCarDto)
-            
+        public async Task<IActionResult> CreateCar(CreateCarDto createCarDto)
+
         {
             var client = _httpClientFactory.CreateClient();
             var jsonData = JsonConvert.SerializeObject(createCarDto);
