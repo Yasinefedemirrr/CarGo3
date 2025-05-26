@@ -8,6 +8,7 @@ namespace CarGo.Dto.CarPricingDtos
 {
     public class ResultCarPricingListWithModelDto
     {
+        public int CarID { get; set; }
         public string Model { get; set; }
         public decimal dailyAmount { get; set; }
         public decimal weeklyAmount { get; set; }
